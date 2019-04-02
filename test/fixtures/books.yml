@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  series_number: 1
+  year_published: 1
+
+two:
+  series_number: 1
+  year_published: 1
