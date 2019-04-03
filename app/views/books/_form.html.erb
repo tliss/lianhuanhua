@@ -22,16 +22,10 @@
     <%= form.label :series_number %><br>
     <%= form.text_field :series_number %>
   </p>
-
-<!--  https://apidock.com/rails/ActionView/Helpers/FormHelper/form_for-->
-<!--  https://stackoverflow.com/questions/39807188/rails-form-accept-only-integer-->
-<!--  https://stackoverflow.com/questions/9555143/html-maxlength-attribute-not-working-on-chrome-and-safari-->
-
+  
   <p>
     <%= form.label :year_published %><br>
-    <%#= form.select :year_published, 2001..2007 %>
-    <%#= form.number_field :year_published %>
-    <%= form.number_field :year_published, in: 0..9999, maxlength: 4 %>
+    <%= form.text_field :year_published, in: 0..9999, maxlength: 4 %>
   </p>
 
   <p>

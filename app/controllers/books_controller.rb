@@ -29,5 +29,4 @@ class BooksController < ApplicationController
     def book_params
       params.require(:book).permit(:year_published, :series_number)
     end
-
 end
