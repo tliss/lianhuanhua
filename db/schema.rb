@@ -22,8 +22,10 @@ ActiveRecord::Schema.define(version: 2019_04_03_221445) do
   create_table "books", force: :cascade do |t|
     t.integer "series_number"
     t.integer "year_published"
+    t.integer "series_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["series_id"], name: "index_books_on_series_id"
   end
 
   create_table "comments", force: :cascade do |t|
