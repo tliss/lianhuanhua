@@ -7,3 +7,16 @@
   <strong>Year Published:</strong>
   <%= book.year_published %>
 </p>
+
+<p>
+  <%= link_to 'Destroy Book', [book.series, book],
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+</p>
+
+<p>
+  <%= link_to 'Edit', edit_series_book_path(book.series, book) %>
+  <!--  same as:-->
+  <%#= link_to 'Edit', edit_series_book_path(id: book.id, series_id: @series.id) %>
+</p>
+

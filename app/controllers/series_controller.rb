@@ -25,6 +25,23 @@ class SeriesController < ApplicationController
     end
   end
 
+  def update
+    @series = Series.find(params[:id])
+
+    if @series.update(series_params)
+      redirect_to @series
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @series = Series.find(params[:id])
+    @series.destroy
+
+    redirect_to series_index_path
+  end
+
   private
     def series_params
       params.require(:series).permit(:title)
