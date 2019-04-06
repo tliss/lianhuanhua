@@ -16,13 +16,16 @@ class BooksController < ApplicationController
   end
 
   def create
-    @book = Book.new(book_params)
+    @series = Series.find(params[:series_id])
+    @book = @series.books.create(book_params)
+    redirect_to series_path(@series)
+  end
 
-    if @book.save
-      redirect_to @book
-    else
-      render 'new'
-    end
+  def destroy
+    @series = Series.find(params[:series_id])
+    @book = @series.books.create(book_params)
+    @book.destroy
+    redirect_to series_path(@series)
   end
 
   private
