@@ -1,10 +1,7 @@
 <%#= form_with(model: [ @series, @series.books.build ], local: true) do |form| %>
-<%= form_with(model: [ @series, @series.books.build ], local: true) do |form| %>
-    <!--TODO: Fix this so it populates the edit-->
-
-<!--  This adds a form that creates a new book by calling the BooksController create
-action. The form_with call here uses an array, which will build a nested route, such
-as /series/1/books.-->
+<%#= form_with(model: @book, url: series_book_path, local: true) do |form| %>
+<%#= form_with(model: [:series, @book], local: true) do |form| %>
+<%= form_with(model: [@series, @series.books.find(@book.id)], local: true) do |form| %>
 
   <% if @series.errors.any? %>
     <div id="error_explanation">
