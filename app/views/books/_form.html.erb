@@ -1,5 +1,6 @@
+<%#= form_with(model: [ @series, @series.books.build ], local: true) do |form| %>
 <%= form_with(model: [ @series, @series.books.build ], local: true) do |form| %>
-<!--TODO: Fix this so it populates the edit-->
+    <!--TODO: Fix this so it populates the edit-->
 
   <% if @series.errors.any? %>
     <div id="error_explanation">
@@ -16,11 +17,11 @@
 
   <p>
     <%= form.label :series_number %><br>
-    <%= form.text_field :series_number %>
+    <%= form.number_field :series_number %>
   </p>
   <p>
     <%= form.label :year_published %><br>
-    <%= form.text_area :year_published %>
+    <%= form.number_field :year_published %>
   </p>
   <p>
     <%= form.submit %>
