@@ -1,8 +1,4 @@
-<%#= form_with(model: [ @series, @series.books.build ], local: true) do |form| %>
-<%#= form_with(model: @book, url: series_book_path, local: true) do |form| %>
-<%#= form_with(model: [:series, @book], local: true) do |form| %>
-<%= form_with(model: [@series, @series.books.find(@book.id)], local: true) do |form| %>
-
+<%= form_with(model: @book, url: [@series, @book], local: true) do |form| %>
   <% if @series.errors.any? %>
     <div id="error_explanation">
       <h2>
