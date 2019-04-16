@@ -8,7 +8,8 @@ class BooksController < ApplicationController
   end
 
   def new
-    @book = Book.new
+    @series = Series.find(params[:series_id])
+    @book = @series.books.new
   end
 
   def edit
@@ -20,6 +21,16 @@ class BooksController < ApplicationController
     @series = Series.find(params[:series_id])
     @book = @series.books.create(book_params)
     redirect_to series_path(@series)
+  end
+
+  def update
+    @book = Book.find(params[:id])
+
+    if @book.update(book_params)
+      redirect_to @book.series
+    else
+      render 'edit'
+    end
   end
 
   def destroy
