@@ -7,6 +7,6 @@
 
 <h2>Add a book:</h2>
 
-<%#= render 'books/form' %>
+<%= render partial: 'books/form', locals: {model: [@series, @series.books.new]} %>
 
 <%= link_to 'Add a book', new_series_book_path(@series) %>
