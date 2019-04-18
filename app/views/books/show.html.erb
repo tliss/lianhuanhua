@@ -9,3 +9,7 @@
   <strong>Year Published:</strong>
   <%= @book.year_published %>
 </p>
+
+<p>
+  <%= link_to "Back", series_path(@book.series) %>
+</p>

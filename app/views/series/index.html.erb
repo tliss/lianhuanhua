@@ -14,3 +14,15 @@
     </tr>
   <% end %>
 </table>
+
+<h3>Add a Series</h3>
+
+<%= render partial: 'form', locals: {series: Series.new} %>
+
+<p>
+  <%= link_to 'Add Series', new_series_path %>
+</p>
+
+<p>
+  <%= link_to 'Main Menu', welcome_index_path %>
+</p>

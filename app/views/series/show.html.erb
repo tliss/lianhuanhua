@@ -9,4 +9,10 @@
 
 <%= render partial: 'books/form', locals: {model: [@series, @series.books.new]} %>
 
-<%= link_to 'Add a book', new_series_book_path(@series) %>
+<p>
+  <%= link_to 'Add a book', new_series_book_path(@series) %>
+</p>
+
+<p>
+  <%= link_to 'Back', series_index_path %>
+</p>
