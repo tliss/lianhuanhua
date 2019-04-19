@@ -8,6 +8,8 @@ class WelcomeController < ApplicationController
     else
       @parameter = params[:search].downcase
       @results = Series.all.where('LOWER(title) LIKE ?', "%#{@parameter}%")
+      # TODO: Add titles to book and make them searchable
+      # @results += Books.all.where()
     end
   end
 end
