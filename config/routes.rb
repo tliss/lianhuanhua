@@ -9,5 +9,7 @@ Rails.application.routes.draw do
     resources :books
   end
 
+  get   '/search',    to: 'welcome#search'
+
   root 'welcome#index'
 end
