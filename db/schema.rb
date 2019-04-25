@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_00_000001) do
+ActiveRecord::Schema.define(version: 2019_05_00_000002) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -43,11 +43,10 @@ ActiveRecord::Schema.define(version: 2019_05_00_000001) do
   end
 
   create_table "pages", force: :cascade do |t|
+    t.text "english"
+    t.text "chinese"
+    t.text "pinyin"
     t.integer "page_number"
-    t.text "traditional_text"
-    t.text "simplified_text"
-    t.text "english_text"
-    t.string "image_source"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,11 +1,10 @@
 class CreatePages < ActiveRecord::Migration[5.2]
   def change
     create_table :pages do |t|
+      t.text :english
+      t.text :chinese
+      t.text :pinyin
       t.integer :page_number
-      t.text :traditional_text
-      t.text :simplified_text
-      t.text :english_text
-      t.string :image_source
 
       t.timestamps
     end

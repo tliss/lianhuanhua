@@ -1,15 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  english: MyText
+  chinese: MyText
+  pinyin: MyText
   page_number: 1
-  traditional_text: MyText
-  simplified_text: MyText
-  english_text: MyText
-  image_source: MyString
 
 two:
+  english: MyText
+  chinese: MyText
+  pinyin: MyText
   page_number: 1
-  traditional_text: MyText
-  simplified_text: MyText
-  english_text: MyText
-  image_source: MyString
