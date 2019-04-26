@@ -13,8 +13,8 @@ class BooksController < ApplicationController
   end
 
   def edit
-    @series = Series.find(params[:series_id])
-    @book = @series.books.find(params[:id])
+    @book = Book.find(params[:id])
+    @series = @book.series
   end
 
   def create
@@ -34,10 +34,9 @@ class BooksController < ApplicationController
   end
 
   def destroy
-    @series = Series.find(params[:series_id])
-    @book = @series.books.find(params[:id])
+    @book = Book.find(params[:id])
     @book.destroy
-    redirect_to series_path(@series)
+    redirect_to series_path(@book.series)
   end
 
   private

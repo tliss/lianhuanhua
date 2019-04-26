@@ -1,5 +1,5 @@
 <h1>Edit book</h1>
 
-<%= render 'form', model: [@series, @book] %>
+<%= render partial: 'form', locals: {model: [@book]} %>
 
-<%= link_to 'Back', series_path %>
+<%= link_to 'Back', series_path(@book.series) %>
