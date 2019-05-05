@@ -5,4 +5,12 @@ Page no.
   <%= image_tag @page.picture %>
 <% end %>
 
+<% if Page.exists?(page_number: @page.page_number - 1) %>
+  <%= link_to 'Prev', page_path(@page.page_number - 1) %>
+<% end %>
+
+<% if Page.exists?(page_number: @page.page_number + 1) %>
+  <%= link_to 'Next', page_path(@page.page_number + 1) %>
+<% end %>
+
 <%= link_to 'Back', book_path(@page.book) %>
