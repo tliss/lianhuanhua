@@ -1,13 +1,32 @@
-<h1>Book Page!</h1>
+<h1>
+  <p><%= @book.series.title %> | Book: <%= @book.book_number %> | Published: <%= @book.year_published %></p>
+</h1>
+
+<h2>Pages</h2>
+
+<table>
+  <tr>
+    <th>Page Number</th>
+  </tr>
+
+  <% @pages.each do |page| %>
+    <tr>
+      <td><%= page.page_number %></td>
+      <td><%= link_to 'Show', page_path(page) %></td>
+      <td><%= link_to 'Edit', edit_page_path(page) %></td>
+      <td><%= link_to 'Destroy', page_path(page), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p>-------------------------</p>
+
+<h3>Add a Page</h3>
+
+<%= render partial: 'pages/form', locals: {model: [@book, @book.pages.new]} %>
 
 <p>
-  <strong>Series Number:</strong>
-  <%= @book.series_number %>
-</p>
-
-<p>
-  <strong>Year Published:</strong>
-  <%= @book.year_published %>
+  <%= link_to 'Add a page', new_book_page_path(@book) %>
 </p>
 
 <p>

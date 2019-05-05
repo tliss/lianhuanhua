@@ -5,7 +5,7 @@
     <th>Series Title</th>
   </tr>
 
-  <% @series.each do |series| %>
+  <% @series_all.each do |series| %>
     <tr>
       <td><%= series.title %></td>
       <td><%= link_to 'Show', series_path(series) %></td>
@@ -17,7 +17,7 @@
 
 <h3>Add a Series</h3>
 
-<%= render partial: 'form', locals: {series: Series.new} %>
+<%= render partial: 'form', locals: {series: @series} %>
 
 <p>
   <%= link_to 'Add Series', new_series_path %>

@@ -5,6 +5,8 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
+    @pages = @book.pages.all # For listing all pages
+    @page = @book.pages.new # For form fields
   end
 
   def new
@@ -20,7 +22,12 @@ class BooksController < ApplicationController
   def create
     @series = Series.find(params[:series_id])
     @book = @series.books.create(book_params)
-    redirect_to series_path(@series)
+
+    if @book.save
+      redirect_to @book
+    else
+      render 'new'
+    end
   end
 
   def update
@@ -41,6 +48,6 @@ class BooksController < ApplicationController
 
   private
     def book_params
-      params.require(:book).permit(:year_published, :series_number)
+      params.require(:book).permit(:year_published, :book_number)
     end
 end

@@ -1,0 +1,45 @@
+<%= form_with model: model, local: true do |form| %>
+
+  <% if @page.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@page.errors.count, "error") %> prohibited this page from being saved:
+      </h2>
+      <ul>
+        <% @page.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= form.label :page_number %><br>
+    <%= form.number_field :page_number %>
+  </p>
+
+  <p>
+    <%= form.label :english %><br>
+    <%= form.text_field :english %>
+  </p>
+
+  <p>
+    <%= form.label :chinese %><br>
+    <%= form.text_field :chinese %>
+  </p>
+
+  <p>
+    <%= form.label :pinyin %><br>
+    <%= form.text_field :pinyin %>
+  </p>
+
+  <p>
+    <%= form.label :picture %><br>
+    <%= form.file_field :picture %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>

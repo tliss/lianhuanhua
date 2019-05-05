@@ -1,5 +1,5 @@
 <p>
-  <strong>Series Number:</strong>
+  <strong>Book Number:</strong>
   <%= book.series_number %>
 </p>
 
@@ -9,16 +9,15 @@
 </p>
 
 <p>
-  <%#= link_to 'Show Book', series_book_path(book.series, book) %>
-  <%= link_to 'Show Book', book_path(book) %>
+  <%= link_to 'Show Book', book_path(book.series, book) %>
 </p>
 
 <p>
-  <%= link_to 'Destroy Book', book,
+  <%= link_to 'Destroy Book', book_path(book.series, book),
               method: :delete,
               data: { confirm: 'Are you sure?' } %>
 </p>
 
 <p>
-  <%= link_to 'Edit Book', edit_book_path(book) %>
+  <%= link_to 'Edit Book', edit_book_path(book.series, book) %>
 </p>

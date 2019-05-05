@@ -1,10 +1,13 @@
 class SeriesController < ApplicationController
   def index
-    @series = Series.all
+    @series_all = Series.all  # For listing all series
+    @series = Series.new      # For form fields
   end
 
   def show
     @series = Series.find(params[:id])
+    @books = @series.books.all # For listing all books
+    @book = @series.books.new # For form fields
   end
 
   def new
@@ -22,6 +25,7 @@ class SeriesController < ApplicationController
       redirect_to @series
     else
       render 'new'
+      # redirect_back(fallback_location: root_path)
     end
   end
 
