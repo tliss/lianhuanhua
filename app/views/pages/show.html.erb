@@ -5,6 +5,18 @@ Page no.
   <%= image_tag @page.picture %>
 <% end %>
 
+<p>
+  <%= @page.chinese %>
+</p>
+
+<p>
+  <%= @page.pinyin %>
+</p>
+
+<p>
+  <%= @page.english %>
+</p>
+
 <% if Page.exists?(page_number: @page.page_number - 1) %>
   <%= link_to 'Prev', page_path(@page.page_number - 1) %>
 <% end %>
