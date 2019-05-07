@@ -60,4 +60,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #------------
+# For Active Storage
 gem "aws-sdk-s3", require: false
+
+# For Devise
+gem 'devise'
