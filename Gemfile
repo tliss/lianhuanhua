@@ -65,3 +65,7 @@ gem "aws-sdk-s3", require: false
 
 # For Devise
 gem 'devise'
+
+# For Bootstrap
+gem 'bootstrap', '~> 4.3.1'
+gem 'jquery-rails'
