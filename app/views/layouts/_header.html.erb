@@ -1,7 +1,24 @@
-<nav class="navbar navbar-light">
-  <%= link_to "Liánhuánhuà", root_path, id: "logo", class: "navbar-brand" %>
+<nav class="navbar d-flex justify-content-between">
 
-  <%= link_to "Log In",   new_user_session_path %>
-  <%= link_to "Sign Up",   new_user_registration_path %>
-  <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+  <div class="row">
+    <div class="ml-3">
+      <%= link_to "Liánhuánhuà", root_path, id: "logo", class: "navbar-brand" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <% if user_signed_in? %>
+      <div class="mr-3">
+        <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+      </div>
+    <% else %>
+      <div class="mr-3">
+        <%= link_to "Log In",   new_user_session_path %>
+      </div>
+      <div class="mr-3">
+        <%= link_to "Sign Up",   new_user_registration_path %>
+      </div>
+    <% end %>
+  </div>
+
 </nav>

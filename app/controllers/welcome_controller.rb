@@ -4,7 +4,7 @@ class WelcomeController < ApplicationController
 
   def search
     if params[:search].blank?
-      redirect_to root_path, alert: "HEYA"
+      redirect_to root_path, alert: "Please enter a search term"
     else
       @parameter = params[:search].downcase
       @results = Series.all.where('LOWER(title) LIKE ?', "%#{@parameter}%")
