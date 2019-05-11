@@ -5,8 +5,9 @@
       <%= link_to "Liánhuánhuà", root_path, id: "logo", class: "navbar-brand" %>
     </div>
     <div class="ml-3">
-      <%= link_to 'Browse Series', controller: 'series', action: 'index' %>
+      <%= link_to "Browse Series", controller: "series" %>
     </div>
+
     <div class="ml-3">
       <%= form_with url: search_path, method: 'get', local: true do |form| %>
         <p>
@@ -31,10 +32,10 @@
       </div>
     <% else %>
       <div class="mr-3">
-        <%= link_to "Log In",   new_user_session_path %>
+        <%= link_to "Log In", new_user_session_path %>
       </div>
       <div class="mr-3">
-        <%= link_to "Sign Up",   new_user_registration_path %>
+        <%= link_to "Sign Up", new_user_registration_path %>
       </div>
     <% end %>
   </div>
