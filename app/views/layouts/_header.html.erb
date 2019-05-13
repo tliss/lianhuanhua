@@ -18,7 +18,7 @@
 
   <% if user_signed_in? %>
     <div class="mr-3 ml-auto">
-      <p><%= current_user.email %></p>
+      <%= current_user.email %>
     </div>
     <div class="mr-3 ml-auto">
       <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
