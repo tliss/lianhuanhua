@@ -3,17 +3,31 @@
 <p>
   <%= link_to 'Add Series', new_series_path %>
 </p>
+<div class="border rounded p-1">
+  <div class="card-deck">
+    <% @series_all.each do |series| %>
+      <div class="card">
+        <img class="card-img-top">
+          <% if series.books.count > 0 %>
+            <% if series.books.first.pages.first.picture.attached? %>
+              <%= link_to series_path(series) do %>
+                <%= image_tag series.books.first.pages.first.picture, class: "img-fluid" %>
+              <% end %>
+            <% end %>
+          <% end %>
+        </img>
 
-<% @series_all.each do |series| %>
-  <% if series.books.first.pages.first.picture.attached? %>
-    <%= link_to series_path(series) do %>
-      <%= image_tag series.books.first.pages.first.thumbnail %>
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title text-center mt-auto"><%= series.title %></h5>
+        </div>
+      </div>
     <% end %>
-  <% end %>
+  </div>
 
-  <%= series.title %>
+</div>
+
+
 
 <!-- TODO: Admin only for these -->
   <%#= link_to 'Edit', edit_series_path(series) %>
   <%#= link_to 'Destroy', series_path(series), method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
