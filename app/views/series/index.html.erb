@@ -1,28 +1,19 @@
 <h1>Listing Series</h1>
 
-<table>
-  <tr>
-    <th>Series Title</th>
-  </tr>
-
-  <% @series_all.each do |series| %>
-    <tr>
-      <td><%= series.title %></td>
-      <td><%= link_to 'Show', series_path(series) %></td>
-      <td><%= link_to 'Edit', edit_series_path(series) %></td>
-      <td><%= link_to 'Destroy', series_path(series), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-  <% end %>
-</table>
-
-<h3>Add a Series</h3>
-
-<%= render partial: 'form', locals: {series: @series} %>
-
 <p>
   <%= link_to 'Add Series', new_series_path %>
 </p>
 
-<p>
-  <%= link_to 'Main Menu', welcome_index_path %>
-</p>
+<% @series_all.each do |series| %>
+  <% if series.books.first.pages.first.picture.attached? %>
+    <%= link_to series_path(series) do %>
+      <%= image_tag series.books.first.pages.first.thumbnail %>
+    <% end %>
+  <% end %>
+
+  <%= series.title %>
+
+<!-- TODO: Admin only for these -->
+  <%#= link_to 'Edit', edit_series_path(series) %>
+  <%#= link_to 'Destroy', series_path(series), method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
