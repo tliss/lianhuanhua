@@ -7,17 +7,17 @@
   <div class="card-deck">
     <% @series_all.each do |series| %>
       <div class="card">
-        <% if series.books.count > 0 %>
-          <% if series.books.first.pages.first.picture.attached? %>
-            <%= link_to series_path(series) do %>
+        <%= link_to series_path(series) do %>
+          <% if series.books.count > 0 %>
+            <% if series.books.first.pages.first.picture.attached? %>
               <%= image_tag series.books.first.pages.first.picture, class: "card-img-top"%>
             <% end %>
           <% end %>
-        <% end %>
 
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title text-center mt-auto"><%= series.title %></h5>
-        </div>
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title text-center mt-auto"><%= series.title %></h5>
+          </div>
+        <% end %>
       </div>
     <% end %>
   </div>
