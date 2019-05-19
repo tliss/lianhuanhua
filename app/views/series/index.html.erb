@@ -1,9 +1,6 @@
 <h1>Browse Series</h1>
 
-<p>
-  <%= link_to 'Add Series', new_series_path %>
-</p>
-
+<p><%= link_to 'Add Series', new_series_path %></p>
 
 <div class="container">
   <div class="row">
@@ -18,7 +15,7 @@
               <% end %>
             <% end %>
 
-            <div class="card-body">
+            <div class="card-body mt-2 p-0">
               <h5 class="card-title text-center"><%= series.title %></h5>
             </div>
 
@@ -30,5 +27,5 @@
 </div>
 
 <!-- TODO: Admin only for these -->
-  <%#= link_to 'Edit', edit_series_path(series) %>
-  <%#= link_to 'Destroy', series_path(series), method: :delete, data: { confirm: 'Are you sure?' } %>
+<%#= link_to 'Edit', edit_series_path(series) %>
+<%#= link_to 'Destroy', series_path(series), method: :delete, data: { confirm: 'Are you sure?' } %>

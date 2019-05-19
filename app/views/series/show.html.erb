@@ -18,7 +18,7 @@
             <% end %>
 
             <div class="card-body mt-2 p-0">
-              <h5 class="card-title text-center"><%= book.book_number %></h5>
+              <h5 class="card-title text-center">Book <%= book.book_number %></h5>
             </div>
 
           <% end %>
@@ -29,10 +29,7 @@
 </div>
 
 <!-- TODO: Add these in for admin: -->
-<%#= link_to 'Show', book_path(book) %>
 <%#= link_to 'Edit', edit_book_path(book) %>
 <%#= link_to 'Destroy', book_path(book), method: :delete, data: { confirm: 'Are you sure?' } %>
 
-<p>
-  <%= link_to 'Back', series_index_path %>
-</p>
+<p><%= link_to 'Back', series_index_path %></p>
