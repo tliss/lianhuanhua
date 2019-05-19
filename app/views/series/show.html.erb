@@ -1,40 +1,37 @@
-<h1>Series: <%= @series.title %></h1>
-
-<h2>Books:</h2>
-
-<!--This line renders books/_book.html.erb-->
-<%#= render @series.books %>
-
-<table>
-  <tr>
-    <th>Book Number</th>
-    <th>Year Published</th>
-    <th>Front Page</th>
-  </tr>
-
-  <% @books.each do |book| %>
-    <tr>
-      <td><%= book.book_number %></td>
-      <td><%= book.year_published %></td>
-      <td>
-        <% if book.pages.first.picture.attached? %>
-          <%= image_tag book.pages.first.thumbnail %>
-        <% end %>
-      </td>
-      <td><%= link_to 'Show', book_path(book) %></td>
-      <td><%= link_to 'Edit', edit_book_path(book) %></td>
-      <td><%= link_to 'Destroy', book_path(book), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-  <% end %>
-</table>
-
-<h2>Add a book:</h2>
-
-<%= render partial: 'books/form', locals: {model: [@series, @series.books.new]} %>
+<h1><%= @series.title %></h1>
 
 <p>
   <%= link_to 'Add a book', new_series_book_path(@series) %>
 </p>
+
+<div class="container">
+  <div class="row">
+    <% @books.each do |book| %>
+      <div class="col-md-6 col-lg-4 col-xl-3 mb-3">
+        <div class="card">
+          <%= link_to book_path(book) do %>
+
+            <% if book.pages.count > 0 %>
+              <% if book.pages.first.picture.attached? %>
+                <%= image_tag book.pages.first.picture, class: "card-img-top"%>
+              <% end %>
+            <% end %>
+
+            <div class="card-body mt-2 p-0">
+              <h5 class="card-title text-center"><%= book.book_number %></h5>
+            </div>
+
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<!-- TODO: Add these in for admin: -->
+<%#= link_to 'Show', book_path(book) %>
+<%#= link_to 'Edit', edit_book_path(book) %>
+<%#= link_to 'Destroy', book_path(book), method: :delete, data: { confirm: 'Are you sure?' } %>
 
 <p>
   <%= link_to 'Back', series_index_path %>
