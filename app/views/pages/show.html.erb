@@ -1,8 +1,7 @@
-Page no.
-<%= @page.page_number %>
+Page no. <%= @page.page_number %>
 
 <% if @page.picture.attached? %>
-  <%= image_tag @page.picture %>
+  <%= image_tag @page.picture, class: "img-fluid" %>
 <% end %>
 
 <p>
