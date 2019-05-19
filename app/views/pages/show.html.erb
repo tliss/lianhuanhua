@@ -1,8 +1,12 @@
+<%= stylesheet_link_tag 'pages' %>
+
 Page no. <%= @page.page_number %>
 
-<% if @page.picture.attached? %>
-  <%= image_tag @page.picture, class: "img-fluid" %>
-<% end %>
+<div>
+  <% if @page.picture.attached? %>
+    <%= image_tag @page.picture, class: "img-fluid" %>
+  <% end %>
+</div>
 
 <p>
   <%= @page.chinese %>
