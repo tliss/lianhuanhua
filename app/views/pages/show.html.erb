@@ -1,11 +1,10 @@
 <%= stylesheet_link_tag 'pages' %>
 
-Page no. <%= @page.page_number %>
-
-<div id="div-img">
+<div id="div-image-wrapper">
   <% if @page.picture.attached? %>
-    <%= image_tag @page.picture, class: "img-fluid" %>
+    <%= image_tag @page.picture, class: "img-fluid", id: "img-page" %>
   <% end %>
+  <p><%= @page.page_number %></p>
 </div>
 
 <p>
