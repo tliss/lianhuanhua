@@ -1,23 +1,20 @@
 <%= stylesheet_link_tag 'pages' %>
 
 <div id="div-image-wrapper">
+  <div id="img-prev"></div>
   <% if @page.picture.attached? %>
     <%= image_tag @page.picture, class: "img-fluid", id: "img-page" %>
   <% end %>
-  <p><%= @page.page_number %></p>
+  <div id="img-next"></div>
 </div>
 
-<p>
-  <%= @page.chinese %>
-</p>
+<p><%= @page.page_number %></p>
 
-<p>
-  <%= @page.pinyin %>
-</p>
+<p><%= @page.chinese %></p>
 
-<p>
-  <%= @page.english %>
-</p>
+<p><%= @page.pinyin %></p>
+
+<p><%= @page.english %></p>
 
 <% if Page.exists?(page_number: @page.page_number - 1) %>
   <%= link_to 'Prev', page_path(@page.page_number - 1) %>
