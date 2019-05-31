@@ -3,16 +3,16 @@
 <div id="div-image-wrapper">
   <% if @page.picture.attached? %>
 
-    <% if Page.exists?(page_number: @page.page_number - 1) %>
-      <%= link_to page_path(@page.page_number - 1) do %>
+    <% if @page.previous_page.present? %>
+      <%= link_to @page.previous_page do %>
         <div id="img-prev"></div>
       <% end %>
     <% end %>
 
     <%= image_tag @page.picture, class: "img-fluid", id: "img-page" %>
 
-    <% if Page.exists?(page_number: @page.page_number + 1) %>
-      <%= link_to page_path(@page.page_number + 1) do %>
+    <% if @page.next_page.present? %>
+      <%= link_to @page.next_page do %>
         <div id="img-next"></div>
       <% end %>
     <% end %>
