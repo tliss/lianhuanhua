@@ -1,11 +1,25 @@
 <%= stylesheet_link_tag 'pages' %>
 
 <div id="div-image-wrapper">
-  <div id="img-prev"></div>
   <% if @page.picture.attached? %>
+
+    <% if Page.exists?(page_number: @page.page_number - 1) %>
+      <%= link_to page_path(@page.page_number - 1) do %>
+        <div id="img-prev"></div>
+      <% end %>
+    <% end %>
+
     <%= image_tag @page.picture, class: "img-fluid", id: "img-page" %>
+
+    <% if Page.exists?(page_number: @page.page_number + 1) %>
+      <%= link_to page_path(@page.page_number + 1) do %>
+        <div id="img-next"></div>
+      <% end %>
+    <% end %>
+
+    <% byebug %>
+
   <% end %>
-  <div id="img-next"></div>
 </div>
 
 <p><%= @page.page_number %></p>
@@ -16,12 +30,7 @@
 
 <p><%= @page.english %></p>
 
-<% if Page.exists?(page_number: @page.page_number - 1) %>
-  <%= link_to 'Prev', page_path(@page.page_number - 1) %>
-<% end %>
-
-<% if Page.exists?(page_number: @page.page_number + 1) %>
-  <%= link_to 'Next', page_path(@page.page_number + 1) %>
-<% end %>
-
 <%= link_to 'Back', book_path(@page.book) %>
+
+
+
