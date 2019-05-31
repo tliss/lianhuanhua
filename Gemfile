@@ -77,3 +77,7 @@ gem 'font-awesome-rails'
 # For bootstrap forms
 # https://www.rubydoc.info/github/bootstrap-ruby/rails-bootstrap-forms
 gem "bootstrap_form", ">= 4.2.0"
+
+# For pagination
+# https://github.com/kaminari/kaminari
+gem 'kaminari'
