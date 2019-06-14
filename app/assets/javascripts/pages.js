@@ -1,17 +1,13 @@
-$(document).ready(function(){
-    if ($('#img-prev').length) {
-        $('#img-prev').hover(function() {
-            $(this).fadeTo(300, 0.5);
-        }, function() {
-            $(this).fadeTo(300, 0);
-        });
-    }
+$(document).on('ready turbolinks:load', function() {
+    $('#img-prev').hover(function() {
+        $(this).fadeTo(300, 0.3);
+    }, function() {
+        $(this).fadeTo(300, 0);
+    });
 
-    if ($('#img-next').length) {
-        $('#img-next').hover(function() {
-            $(this).fadeTo(300, 0.5);
-        }, function() {
-            $(this).fadeTo(300, 0);
-        });
-    }
+    $('#img-next').hover(function() {
+        $(this).fadeTo(300, 0.3);
+    }, function() {
+        $(this).fadeTo(300, 0);
+    });
 });
