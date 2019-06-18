@@ -4,7 +4,7 @@
   <% if @page.picture.attached? %>
 
     <% if @page.previous_page.present? %>
-      <%= link_to @page.previous_page do %>
+      <%= link_to @page.previous_page, id: "img-prev-link" do %>
         <div id="img-prev"></div>
       <% end %>
     <% end %>
@@ -12,7 +12,7 @@
     <%= image_tag @page.picture, class: "img-fluid", id: "img-page" %>
 
     <% if @page.next_page.present? %>
-      <%= link_to @page.next_page do %>
+      <%= link_to @page.next_page, id: "img-next-link" do %>
         <div id="img-next"></div>
       <% end %>
     <% end %>
