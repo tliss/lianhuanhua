@@ -1,4 +1,4 @@
-$(document).on('gturbolinks:load', function() {
+$(document).on('turbolinks:load', function() {
     if ($('#img-prev').length) {
         $('#img-prev').hover(function() {
             $(this).fadeTo(300, 0.3);
