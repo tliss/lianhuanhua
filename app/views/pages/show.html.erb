@@ -1,4 +1,5 @@
 <%= stylesheet_link_tag 'pages' %>
+<%= stylesheet_link_tag 'animate.min' %>
 
 <div id="div-image-wrapper">
   <% if @page.picture.attached? %>
@@ -6,7 +7,7 @@
     <% if @page.previous_page.present? %>
       <%= link_to @page.previous_page, id: "img-prev-link" do %>
         <div id="img-prev">
-          <p id="prev-icon">
+          <p id="prev-icon" class="animated">
             <%= fa_icon("arrow-circle-left", text: "") %>
           </p>
         </div>
@@ -18,7 +19,7 @@
     <% if @page.next_page.present? %>
       <%= link_to @page.next_page, id: "img-next-link" do %>
         <div id="img-next">
-          <p id="next-icon">
+          <p id="next-icon" class="animated">
             <%= fa_icon("arrow-circle-right", text: "") %>
           </p>
         </div>

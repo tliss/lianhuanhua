@@ -2,32 +2,25 @@
         if ($('#img-prev').length) {
             $('#img-prev').hover(function() {
                 $(this).stop(true,false).fadeTo(300, 0.3);
-                $('#prev-icon').css({
-                    transform: 'rotate(-0deg)',
-                    transition: 'all ease-in-out .3s'
-                });
+                $('#prev-icon').removeClass("zoomOut faster");
+                $('#prev-icon').addClass("zoomIn faster");
             }, function() {
                 $(this).stop(true,false).fadeTo(300, 0);
-                $('#prev-icon').css({
-                    transform: 'rotate(135deg)',
-                    transition: 'all ease-in-out .3s'
-                });
+                $('#prev-icon').removeClass("zoomIn faster");
+                $('#prev-icon').addClass("zoomOut faster");
+
             });
         }
 
         if ($('#img-next').length) {
             $('#img-next').hover(function() {
                 $(this).stop(true,false).fadeTo(300, 0.3);
-                $('#next-icon').css({
-                    transform: 'rotate(0deg)',
-                    transition: 'all ease-in-out .3s'
-                });
+                $('#next-icon').removeClass("zoomOut faster");
+                $('#next-icon').addClass("zoomIn faster");
             }, function() {
                 $(this).stop(true,false).fadeTo(300, 0);
-                $('#next-icon').css({
-                    transform: 'rotate(-135deg)',
-                    transition: 'all ease-in-out .3s'
-                });
+                $('#next-icon').removeClass("zoomIn faster");
+                $('#next-icon').addClass("zoomOut faster");
             });
         }
 
