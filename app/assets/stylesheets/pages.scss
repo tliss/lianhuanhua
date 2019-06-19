@@ -41,3 +41,11 @@
   font-size: 5rem;
   opacity: 100%
 }
+
+#next-icon {
+  transform: rotate(-135deg);
+}
+
+#prev-icon {
+  transform: rotate(135deg);
+}

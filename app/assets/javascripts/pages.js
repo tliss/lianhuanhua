@@ -1,17 +1,33 @@
     $(document).on('turbolinks:load', function() {
         if ($('#img-prev').length) {
             $('#img-prev').hover(function() {
-                $(this).fadeTo(300, 0.3);
+                $(this).stop(true,false).fadeTo(300, 0.3);
+                $('#prev-icon').css({
+                    transform: 'rotate(-0deg)',
+                    transition: 'all ease-in-out .3s'
+                });
             }, function() {
-                $(this).fadeTo(300, 0);
+                $(this).stop(true,false).fadeTo(300, 0);
+                $('#prev-icon').css({
+                    transform: 'rotate(135deg)',
+                    transition: 'all ease-in-out .3s'
+                });
             });
         }
 
         if ($('#img-next').length) {
             $('#img-next').hover(function() {
-                $(this).fadeTo(300, 0.3);
+                $(this).stop(true,false).fadeTo(300, 0.3);
+                $('#next-icon').css({
+                    transform: 'rotate(0deg)',
+                    transition: 'all ease-in-out .3s'
+                });
             }, function() {
-                $(this).fadeTo(300, 0);
+                $(this).stop(true,false).fadeTo(300, 0);
+                $('#next-icon').css({
+                    transform: 'rotate(-135deg)',
+                    transition: 'all ease-in-out .3s'
+                });
             });
         }
 
