@@ -5,7 +5,11 @@
 
     <% if @page.previous_page.present? %>
       <%= link_to @page.previous_page, id: "img-prev-link" do %>
-        <div id="img-prev"></div>
+        <div id="img-prev">
+          <p id="prev-icon">
+            <%= fa_icon("arrow-circle-left", text: "") %>
+          </p>
+        </div>
       <% end %>
     <% end %>
 
@@ -13,7 +17,11 @@
 
     <% if @page.next_page.present? %>
       <%= link_to @page.next_page, id: "img-next-link" do %>
-        <div id="img-next"></div>
+        <div id="img-next">
+          <p id="next-icon">
+            <%= fa_icon("arrow-circle-right", text: "") %>
+          </p>
+        </div>
       <% end %>
     <% end %>
 

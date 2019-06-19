@@ -12,26 +12,32 @@
   display: inline-block;
 }
 
-#img-prev {
+#img-prev, #img-next {
   background-color: black;
   position: absolute;
   opacity: 0.0;
   width: 50%;
   height: 100%;
   top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#img-prev {
   left: 0;
 }
 
 #img-next {
-  background-color: black;
-  position: absolute;
-  opacity: 0.0;
-  width: 50%;
-  height: 100%;
-  top: 0;
   right: 0;
 }
 
 #img-page {
   max-height: 80vh;
+}
+
+#img-next, #img-prev {
+  color: red;
+  font-size: 5rem;
+  opacity: 100%
 }
