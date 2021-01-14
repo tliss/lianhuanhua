@@ -14,13 +14,13 @@ For more information on lianhuanhua, please consult these other resources:
  * http://www.self.gutenberg.org/articles/eng/Lianhuanhua
 
 ## Main page
-![Main Page](http://tayloraliss.com/images/lianhuanhua/01.png)
+![Main Page](http://tayloraliss.com/images/lianhuanhua/01.jpg)
 
 ## Series browsing page
-![Series](http://tayloraliss.com/images/lianhuanhua/02.png)
+![Series](http://tayloraliss.com/images/lianhuanhua/02.jpg)
 
 ## Book pages
-![Pages](http://tayloraliss.com/images/lianhuanhua/03.png)
+![Pages](http://tayloraliss.com/images/lianhuanhua/03.jpg)
 
 ## Reading view
-![Reading](http://tayloraliss.com/images/lianhuanhua/04.png)
+![Reading](http://tayloraliss.com/images/lianhuanhua/04.jpg)
